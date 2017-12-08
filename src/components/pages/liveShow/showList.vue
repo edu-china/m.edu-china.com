@@ -72,7 +72,7 @@ export default {
 			if (this.showData[index].isUseful == 0) {
 				this.$http.get('/YearCard/setLiveShowUseful/commentId/' + this.showData[index].id)
 					.then((response) => {
-						if (response.status == 1) {
+						if (response.status == 200) {
 							this.showData[index].isUseful = 1;
 							this.showData[index].usefulCount = Number(this.showData[index].usefulCount) + 1
 

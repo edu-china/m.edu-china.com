@@ -96,6 +96,7 @@ swiper-slide {
 }
 
 .seckill-group>div .img {
+	padding: 0 .25rem .3rem;
 	text-align: center
 }
 

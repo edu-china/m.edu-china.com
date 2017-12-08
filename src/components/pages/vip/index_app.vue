@@ -49,8 +49,8 @@
 			<!-- Optional controls -->
 			<div class="swiper-pagination" slot="pagination"></div>
 			<!-- <div class="swiper-button-prev" slot="button-prev"></div>
-															<div class="swiper-button-next" slot="button-next"></div>
-															<div class="swiper-scrollbar"   slot="scrollbar"></div> -->
+																<div class="swiper-button-next" slot="button-next"></div>
+																<div class="swiper-scrollbar"   slot="scrollbar"></div> -->
 		</swiper>
 		<h3 class="tap-header">会员亲子专享</h3>
 		<ul class="flexbox tap">
@@ -73,7 +73,7 @@
 									<div class="big-name elp">{{item.name}}</div>
 									<div class="name elp">{{item.start}}</div>
 									<div class="price">
-										<span>￥{{item.price}}</span>
+										<span>会员￥{{item.price}}</span>
 										<!-- <del>￥{{item.valid}}</del> -->
 
 									</div>
@@ -100,7 +100,7 @@
 									<div class="big-name elp">{{item.name}}</div>
 									<div class="name elp">{{item.start}}</div>
 									<div class="price">
-										<span>￥{{item.price}}</span>
+										<span>会员￥{{item.price}}</span>
 										<!-- <del>￥{{item.valid}}</del> -->
 
 									</div>
@@ -127,7 +127,7 @@
 									<div class="big-name elp">{{item.name}}</div>
 									<div class="name elp">{{item.start}}</div>
 									<div class="price">
-										<span>￥{{item.price}}</span>
+										<span>会员￥{{item.price}}</span>
 										<!-- <del>￥{{item.valid}}</del> -->
 
 									</div>
@@ -172,12 +172,18 @@
 		</div>
 		<div class="add-reason">
 			<h3>加入有礼</h3>
+			<div>
+				<img style="    width: 100%;height: auto;padding-bottom: .15rem" src="../../../assets/images/vip-package.png" alt="">
+			</div>
 			<div class="txt">
-				1、活动时间：即日起至2017年12月31日；<br>
-				2、活动规则：VIP会员99元/年，活动期间内，加入VIP会员仅需88元/年，亲子一卡通用户加入VIP会员特惠价78元/年，还送VIP会员大礼包一份！<br>
-				3、VIP会员大礼包：神州佳教平台现金优惠券100元、神小佳定制图册一本、彩色铅笔一筒、神小佳胸章一枚，爬梯朗读胸章一枚，会员感谢信一封，和VIP会员卡（可免费畅玩10多家优质亲子场馆）<br>
-				4、领取规则：购买后点击领取按钮填写收货地址即可领取VIP会员大礼包，如未填写即视为自动放弃；<br>
-				会员默认同意<router-link :to="{name:'Agreement'}">《佳教会员协议》</router-link>（可点击查看）。
+				1、活动时间：即日起至2017年12月31日；<br> 2、活动规则：
+				<br> （1）VIP会员99元/年，活动期间内，加入VIP会员仅需88元/年，送VIP会员大礼包一份！
+				<br> （2）老用户（已过期一卡通）用户加入VIP会员特惠价78元/年。送VIP会员大礼包一份！
+				<br> （3）10月31日之前拥有并激活神州亲子一卡通用户免费获得会员身份。
+				<br> 3、VIP会员大礼包：神州佳教平台现金优惠券100元、神小佳定制图册一本、彩色铅笔一筒、神小佳胸章一枚，爬梯朗读胸章一枚，会员感谢信一封，和VIP会员卡（可免费畅玩10多家优质亲子场馆）
+				<br> 4、领取规则：购买后点击领取按钮填写收货地址即可领取VIP会员大礼包，如未填写即视为自动放弃；
+				<br> 会员默认同意
+				<router-link :to="{name:'Agreement'}">《神州佳教会员协议》</router-link>（可点击查看）。<br> 注：会员大礼包预计在12月31日前寄出。
 			</div>
 
 		</div>
@@ -201,7 +207,6 @@ export default {
 			notNextTick: true,
 			swiperOption: {
 				// swiper optionss 所有的配置同swiper官方api配置
-				autoplay: 3000,
 				direction: 'horizontal',
 				grabCursor: true,
 				setWrapperSize: true,
@@ -229,7 +234,7 @@ export default {
 			indexs: 0,
 			showPopup: false,
 			vipdata: {},
-			url:''
+			url: ''
 
 
 
@@ -243,9 +248,9 @@ export default {
 	},
 	methods: {
 		getData() {
-			if(this.$route.query.token){
+			if (this.$route.query.token) {
 				this.url = 'ajaxVip/appIndex?token=' + this.$route.query.token
-			}else{
+			} else {
 				this.url = 'ajaxVip/appIndex'
 			}
 			this.$http.get(this.url)

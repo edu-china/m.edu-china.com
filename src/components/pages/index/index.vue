@@ -27,7 +27,7 @@
 						<i>{{timershow.s}}</i>
 					</Downtimer>
 				</div>
-				<div class="img">
+				<div style="padding-top: .15rem" class="img">
 					<img :src="seckillImg" alt="">
 				</div>
 			</router-link>
