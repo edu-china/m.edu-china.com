@@ -3,19 +3,19 @@
     <topbar></topbar>
     <div class="nav">
       <ul>
-        <li v-for="type in datas.typeList" :class="{actived:currtype==type.key}" @click="changetab(type.key)">
+        <li v-for="(type,i) in datas.typeList" :class="{actived:currtype==type.key}" @click="changetab(type.key)" :key="i">
           <span>{{type.value}}</span>
         </li>
       </ul>
     </div>
 
-    <dl class="item" v-for="tuan in tuanList">
+    <dl class="item" v-for="(tuan,i) in tuanList" :key="i">
   		<dt>
   			<img :src="tuan.image_url"/>
   			<h2 class="px32 hideTxt">{{tuan.title}}</h2>
   			<p class="px24">{{tuan.descript}}</p>
   		</dt>
-  		<dd v-for="info in tuan.tuanInfoList">
+  		<dd v-for="(info,j) in tuan.tuanInfoList" :key="i+'-'+j">
   			<router-link :to="{ name: 'TuanDetail', params: {id:info.id} }">
   				<span class="tuan">{{info.number}}人团</span>
   				<big>￥{{info.price}}<small>{{info.is_qi-0?' 起':''}}</small></big>
@@ -105,7 +105,7 @@ import imgmodel from '@/components/pages/group/imgModel'
 .tuanindex .item dd{ margin-top:1px;background-color:#fff; position:relative;}
 .tuanindex .item dd a{ display:block; height:.92rem; line-height:.92rem; padding:0 .28rem; font-size:.24rem; }
 .tuanindex .item dd span{ vertical-align:middle}
-.tuanindex .item dd .tuan{ display:inline-block; width:1rem; position:relative;}
+.tuanindex .item dd .tuan{ display:inline-block; width:1.2rem; position:relative;}
 .tuanindex .item dd big{vertical-align:middle; font-size:.26rem; color:#ff4b4b; display:inline-block; width:1.2rem;}
 .tuanindex .item dd del{vertical-align:middle; color: #989998}
 .tuanindex .item dd .btn{ position: absolute; right:.2rem;width:1.52rem; height:.6rem; line-height:.6rem; color:#ffaf2f; top:50%; margin-top:-.3rem; text-align:center; border-radius:.04rem; border: 1px solid #fac126; font-size: .28rem;}

@@ -23,7 +23,7 @@
     </section>
     <section class="currlist" v-show="datas.tuanInfoList.length">
       <div class="tit px30">该商品还支持以下拼团</div>
-      <div class="curritem pdlr rel" v-for="(info,i) in datas.tuanInfoList">
+      <div class="curritem pdlr rel" v-for="(info,i) in datas.tuanInfoList" :key="i">
         <span>{{info.number}}人团</span>
         <span class="red">拼团￥<big>{{info.price}}</big><small>{{info.is_qi-0?'起':''}}</small></span>
         <del>￥{{info.old_price}}</del>
