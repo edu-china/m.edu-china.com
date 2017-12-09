@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="course">
-      <li v-for="item in list">
+      <li v-for="(item,i) in list" :key="i">
         <a :href="(item.is_voucher-0?'/vd':'/cd')+item.id">
           <div class="img"><img :src="item.courseImageUrlList[0]"><span class="star2" :class="'s'+item.credit_rate*2"></span></div>
           <div class="right">

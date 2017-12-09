@@ -1,11 +1,11 @@
 <template>
   <div class="artlist">
     <ul>
-      <li class="ct-item" :class="{article : !vo.contentImageList.length}"  v-for="vo in list" @click="redirect('/ard'+vo.id)">
+      <li class="ct-item" :class="{article : !vo.contentImageList.length}"  v-for="(vo,i) in list" @click="redirect('/ard'+vo.id)" :key="i">
 
         <div class="item-txt" v-if="vo.contentImageList.length">{{vo.title}}</div>
         <div class="item-img" v-if="vo.contentImageList.length">
-          <span v-for="img in vo.contentImageList"><img :src="img"></span>
+          <span v-for="(img,j) in vo.contentImageList" :key="i+'-'+j"><img :src="img"></span>
         </div>
         <div class="item-related" v-if="vo.contentImageList.length">
           <span class="item-label elp" @click.stop="redirect('/gl/article/'+vo.topicInfo.code+'.html')">{{vo.topicInfo.name}}</span>

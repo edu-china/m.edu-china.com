@@ -8,8 +8,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "run dev",
             "program": "${workspaceFolder}/build/dev-server.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "run build",
+            "program": "${workspaceFolder}/build/build.js"
         }
     ]
 }

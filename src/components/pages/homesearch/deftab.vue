@@ -2,8 +2,8 @@
   <div class="hseach" v-if="show">
     <h2>热门搜索</h2>
     <div class="adw">
-      <ul class="flexbox" v-for="i in Math.ceil(imgs.length/2)">
-        <li v-for="j in 2">
+      <ul class="flexbox" v-for="i in Math.ceil(imgs.length/2)" :key="i">
+        <li v-for="j in 2" :key="i+'-'+j">
           <a :href="imgs[j-1+2*(i-1)].action">
             <img :src="imgs[j-1+2*(i-1)].content"/>
           </a>

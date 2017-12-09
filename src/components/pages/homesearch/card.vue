@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="qlist">
-      <li v-for="vo in list">
+      <li v-for="(vo,i) in list" :key="i">
         <a :href="'/YearCard/activityDetail/itemId/'+vo.id+'/myCardId/'+vo.my_card_id+'/source/1'">
           <div class="litop">
             <div class="right">
@@ -17,7 +17,7 @@
           </div>
         </a>
         <a class="shows" href="/YearCard/activityDetail/itemId/10172/myCardId/0#showli" v-if="vo.liveShowList.length">
-          <img :src="users.head_portrait" v-for="users in vo.liveShowList">
+          <img :src="users.head_portrait" v-for="(users,j) in vo.liveShowList" :key="i+'-'+j">
           <span>{{vo.liveShowTotal}}人秀过</span>
         </a>
         <dl class="clgray px20 addr">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="activitys"  v-if="list.length">
-      <li v-for="item in list">
+      <li v-for="(item,i) in list" :key="i">
         <a :href="'/bj/acd'+item.id">
           <div :class="{coupon:item.is_promotion==1,over:item.valid_status==2}"><img :src="item.image_url"></div>
           <div class="topic">

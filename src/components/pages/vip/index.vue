@@ -176,17 +176,8 @@
 			</div>
 		</div>
 		<div class="add-reason">
-			<h3>加入有礼</h3>
 			<div class="txt">
-				<img style="    width: 100%;height: auto;padding-bottom: .15rem" src="../../../assets/images/vip-package.png" alt="">
-				1、活动时间：即日起至2017年12月31日；<br> 2、活动规则：
-				<br> （1）VIP会员99元/年，活动期间内，加入VIP会员仅需88元/年，送VIP会员大礼包一份！
-				<br> （2）老用户（已过期一卡通）用户加入VIP会员特惠价78元/年。送VIP会员大礼包一份！
-				<br> （3）10月31日之前拥有并激活神州亲子一卡通用户免费获得会员身份。
-				<br> 3、VIP会员大礼包：神州佳教平台现金优惠券100元、神小佳定制图册一本、彩色铅笔一筒、神小佳胸章一枚，爬梯朗读胸章一枚，会员感谢信一封，和VIP会员卡（可免费畅玩10多家优质亲子场馆）
-				<br> 4、领取规则：购买后点击领取按钮填写收货地址即可领取VIP会员大礼包，如未填写即视为自动放弃；
-				<br> 会员默认同意
-				<router-link :to="{name:'Agreement'}">《神州佳教会员协议》</router-link>（可点击查看）。<br> 注：会员大礼包预计在12月31日前寄出。
+				会员默认同意<router-link :to="{name:'Agreement'}">《神州佳教会员协议》</router-link>（可点击查看）。
 
 				
 			</div>

@@ -12,7 +12,7 @@
       <span class="red">还差{{tuanitem.have_number}}人成团</span>　 距结束 <downtimer :lefttime="tuanitem.have_time-0" @onChange="ctime"><i>{{timetmp.h}}</i>：<i>{{timetmp.n}}</i>：<i>{{timetmp.s}}</i></downtimer>
     </div>
     <div class="users sect">
-      <span v-for="user in userList"><img :src="user.value"/></span>
+      <span v-for="(user,i) in userList" :key="i"><img :src="user.value"/></span>
       <span v-if="tuanitem.status==1"><img src="../../../assets/images/inv.gif"/></span>
     </div>
     <div class="sect stuts" v-if="tuanitem.status==1">
